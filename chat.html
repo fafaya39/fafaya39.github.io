@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>留言板</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+  </head>
+  <body background="cool-background.png">
+    <div style="text-align:center;">
+    <h1 style="font-size: 4em;">留言板</h1>
+    <h2>留言板每月清除一次</h2>
+    <form>
+      <label>姓名:</label>
+      <input type="text" id="name" />
+      <br />
+      <label>留言:</label>
+      <textarea id="message"></textarea>
+      <br />
+      <button type="button" onclick="addMessage()">留言</button>
+    </form>
+    <div id="messages">
+    </div>
+    <script>
+      function addMessage() {
+        var name = document.getElementById("name").value;
+        var message = document.getElementById("message").value;
+        var messagesDiv = document.getElementById("messages");
+        var newMessage = document.createElement("p");
+        newMessage.innerHTML = name + ": " + message;
+        messagesDiv.appendChild(newMessage);
+      }
+    </script>
+    </div>
+  </body>
+</html>
